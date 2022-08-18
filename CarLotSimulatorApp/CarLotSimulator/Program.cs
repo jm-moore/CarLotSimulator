@@ -7,6 +7,7 @@ namespace CarLotSimulator
     {
         static void Main(string[] args)
         {
+            var carList = new List<Car>();
             //TODO
             //var ListOfCars = new List<string>();
             //    for (int i = 0; i < args.Length; i++)
@@ -18,6 +19,7 @@ namespace CarLotSimulator
             //Car shall have the following methods: MakeEngineNoise(), MakeHonkNoise()
             //The methods should take one string parameter: the respective noise property
             Car myCar = new Car();
+            carList.Add(myCar);
 
             myCar.Make = "Ford";
             myCar.Model = "Taurus";
@@ -36,6 +38,8 @@ namespace CarLotSimulator
             Console.WriteLine();
 
             Car yourCar = new Car() { Make = "Subaru", Model = "Outback", Year = 2019, EngineNoise = "No", HonkNoise = "Quiet", IsDriveable = true };
+            carList.Add(yourCar);
+
             Console.WriteLine("Your car - ");
             Console.WriteLine($"Make : {yourCar.Make}");
             Console.WriteLine($"Model: {yourCar.Model}");
@@ -46,6 +50,8 @@ namespace CarLotSimulator
             Console.WriteLine();
 
             Car ourCar = new Car("Mercedes", "GLA", 2022, "No", "Loud", true);
+            carList.Add(ourCar);
+
             Console.WriteLine("Our car - ");
             Console.WriteLine($"Make : {ourCar.Make}");
             Console.WriteLine($"Model: {ourCar.Model}");
@@ -60,9 +66,22 @@ namespace CarLotSimulator
             //*************BONUS*************//
 
             // Set the properties utilizing the 3 different ways we learned about, one way for each car
-
+            Console.WriteLine();
+            Console.WriteLine("Car Lot - ");
             //*************BONUS X 2*************//
+            foreach (var item in carList)
+            {
+                Console.WriteLine();
+                Console.WriteLine(item.Make);
+                Console.WriteLine(item.Model);
+                Console.WriteLine(item.Year);
+                Console.WriteLine(item.EngineNoise);
+                Console.WriteLine(item.HonkNoise);
+                Console.WriteLine(item.IsDriveable);
+                Console.WriteLine();
+            }
 
+            Console.WriteLine();
             //Create a CarLot class
             //It should have at least one property: a List of cars
             //Instanciate the a Carlot at the beginning of the program and as you create a car add the car to the list.
