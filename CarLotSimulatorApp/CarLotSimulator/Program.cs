@@ -20,6 +20,7 @@ namespace CarLotSimulator
             //The methods should take one string parameter: the respective noise property
             Car myCar = new Car();
             carList.Add(myCar);
+            CarLot.numberOfCars++;
 
             myCar.Make = "Ford";
             myCar.Model = "Taurus";
@@ -39,6 +40,7 @@ namespace CarLotSimulator
 
             Car yourCar = new Car() { Make = "Subaru", Model = "Outback", Year = 2019, EngineNoise = "No", HonkNoise = "Quiet", IsDriveable = true };
             carList.Add(yourCar);
+            CarLot.numberOfCars++;
 
             Console.WriteLine("Your car - ");
             Console.WriteLine($"Make : {yourCar.Make}");
@@ -51,6 +53,7 @@ namespace CarLotSimulator
 
             Car ourCar = new Car("Mercedes", "GLA", 2022, "No", "Loud", true);
             carList.Add(ourCar);
+            CarLot.numberOfCars++;
 
             Console.WriteLine("Our car - ");
             Console.WriteLine($"Make : {ourCar.Make}");
@@ -67,7 +70,7 @@ namespace CarLotSimulator
 
             // Set the properties utilizing the 3 different ways we learned about, one way for each car
             Console.WriteLine();
-            Console.WriteLine("Car Lot - ");
+            Console.WriteLine($"There are {CarLot.numberOfCars} cars in the Car Lot. Details of the cars are below:");
             //*************BONUS X 2*************//
             foreach (var item in carList)
             {
